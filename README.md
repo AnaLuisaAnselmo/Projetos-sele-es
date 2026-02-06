@@ -19,6 +19,6 @@ Sistema desenvolvido em PHP utilizando MVC e Programação Orientada a Objetos.
 - MVC
 
 ## Desenvolvedores
-- [Amanda] (https://github.com/amandal28).
-- [Ana Luisa] (https://github.com/AnaLuisaAnselmo).
-- [Sophia] (https://github.com/sophboo).
+- Amanda - https://github.com/amandal28.
+- Ana Luisa - https://github.com/AnaLuisaAnselmo.
+- Sophia - https://github.com/sophboo.
