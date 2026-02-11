@@ -6,16 +6,28 @@ class ResultadoModel {
 
     public function inserir($jogo, $gm, $gv) {
 
-        Database::connect()
-            ->prepare("INSERT INTO resultados (jogo_id, gols_mandante, gols_visitante) VALUES (?, ?, ?)")
-            ->execute([$jogo, $gm, $gv]);
+     $conn = Database::connect();
 
-        $jogoInfo = Database::connect()
-            ->query("SELECT * FROM jogos WHERE id=$jogo")
+        $stmt = $conn->prepare("INSERT INTO resultados (jogo_id, gols_mandante, gols_visitante) VALUES (?, ?, ?)");
+           
+        $stmt->execute([$jogo, $gm, $gv]);
+
+         //$id = $conn->lastInsertId(); // agora pega o ID correto
+
+        $jogoInfo = $conn->query("SELECT * FROM jogos WHERE id=$jogo")
             ->fetch();
 
+            //var_dump($jogoInfo);
+           // die();
         $classificacao = new ClassificacaoModel();
-        $classificacao->atualizar($jogoInfo['mandante_id'], $gm, $gv);
-        $classificacao->atualizar($jogoInfo['visitante_id'], $gv, $gm);
+        $classificacao->atualizar($jogoInfo['mandante'], $gm, $gv);
+        $classificacao->atualizar($jogoInfo['visitante'], $gv, $gm);
+    }
+
+    public function listar(){
+        return Database::connect()
+            ->query("select*from resultados ")
+            ->fetchAll();
+           
     }
 }

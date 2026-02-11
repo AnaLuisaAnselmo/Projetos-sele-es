@@ -4,6 +4,8 @@ require_once "MVC/Model/ResultadoModel.php";
 class ResultadoController {
 
     public function index() {
+        $model = new ResultadoModel();
+        $dados = $model->listar();
         require "MVC/View/resultado.php";
     }
 
@@ -17,4 +19,10 @@ class ResultadoController {
 
         header("Location: index.php?pagina=resultado");
     }
+
+    public function listar() {
+        $model = new ResultadoModel();
+        return $model->listar();
+    }
+
 }

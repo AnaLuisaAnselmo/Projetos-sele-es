@@ -18,7 +18,7 @@
 
 <h3>Lista de Usuários</h3>
 
-<table style="border=1px">
+<table border="1">
 <tr>
     <th>ID</th>
     <th>Nome</th>

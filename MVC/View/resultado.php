@@ -9,11 +9,39 @@
 <h2>Registrar Resultado</h2>
 
 <form method="POST" action="index.php?pagina=resultado&acao=inserir">
+
     <input type="number" name="jogo_id" placeholder="ID do Jogo" required>
+
     <input type="number" name="gols_mandante" placeholder="Gols Mandante" required>
+
     <input type="number" name="gols_visitante" placeholder="Gols Visitante" required>
+
     <button type="submit">Registrar</button>
 </form>
+
+<h3>Lista de Resultados:</h3>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>GM</th>
+    <th>GV</th>
+</tr>
+
+
+
+<?php
+
+foreach ($dados as $resultado): ?>
+<tr>
+    <td><?= $resultado['jogo_id'] ?></td>
+    <td><?=$resultado['gols_mandante']?></td>
+    <td><?=$resultado['gols_visitante']?></td>
+    
+</tr>
+<?php endforeach; ?>
+
+</table>
 
 </body>
 </html>

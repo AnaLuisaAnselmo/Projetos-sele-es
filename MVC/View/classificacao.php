@@ -8,7 +8,7 @@
 
 <h2>Classificação</h2>
 
-<table style="border=1px" >
+<table border="1">
 <tr>
     <th>Seleção</th>
     <th>Grupo</th>

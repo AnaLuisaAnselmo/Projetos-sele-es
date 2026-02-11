@@ -9,9 +9,9 @@ class JogoModel {
             ->fetchAll();
     }
 
-    public function inserir($mandante, $visitante, $data, $estadio) {
+    public function inserir($mandante, $visitante, $gols_mandante, $gols_visitante,$estadio, $data,  $grupo ) {
         Database::connect()
-            ->prepare("INSERT INTO jogos (mandante_id, visitante_id, data_jogo, estadio) VALUES (?, ?, ?, ?)")
-            ->execute([$mandante, $visitante, $data, $estadio]);
+            ->prepare("INSERT INTO jogos ( mandante, visitante, gols_mandante, gols_visitante, estadio, data_jogo,  grupo  ) VALUES (?, ?, ?, ?, ?, ?, ?)")
+            ->execute([ $mandante, $visitante, $gols_mandante,   $gols_visitante, $estadio, $data,  $grupo]);
     }
 }

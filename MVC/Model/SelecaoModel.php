@@ -9,15 +9,21 @@ class SelecaoModel {
             ->fetchAll();
     }
 
-    public function inserir($nome, $continente, $grupo) {
-        Database::connect()
-            ->prepare("INSERT INTO selecoes (nome, continente, grupo_id) VALUES (?, ?, ?)")
-            ->execute([$nome, $continente, $grupo]);
+   public function inserir($nome, $continente, $grupo) {
 
-        $id = Database::connect()->lastInsertId();
+    $conn = Database::connect();
 
-        Database::connect()
-            ->prepare("INSERT INTO classificacao (selecao_id, grupo_id) VALUES (?, ?)")
-            ->execute([$id, $grupo]);
-    }
+    $stmt = $conn->prepare(
+        "INSERT INTO selecoes (nome, continente, grupo_id) VALUES (?, ?, ?)"
+    );
+    $stmt->execute([$nome, $continente, $grupo]);
+
+    $id = $conn->lastInsertId(); // agora pega o ID correto
+
+    $stmt2 = $conn->prepare(
+        "INSERT INTO classificacao (selecao_id, grupo_id) VALUES (?, ?)"
+    );
+    $stmt2->execute([$id, $grupo]);
+}
+
 }
