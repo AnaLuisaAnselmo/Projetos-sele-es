@@ -17,7 +17,7 @@
 
 <h3>Lista de Seleções</h3>
 
-<table border="1">
+<table style="border=1px">
 <tr>
     <th>ID</th>
     <th>Nome</th>

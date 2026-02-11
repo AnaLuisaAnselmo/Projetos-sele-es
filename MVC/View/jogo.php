@@ -18,7 +18,7 @@
 
 <h3>Lista de Jogos</h3>
 
-<table border="1">
+<table style="border=1px">
 <tr>
     <th>ID</th>
     <th>Mandante</th>
