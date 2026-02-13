@@ -8,7 +8,7 @@
 
 <h2>Registrar Resultado</h2>
 
-<form method="POST" action="index.php?pagina=resultado&acao=inserir">
+<form id="formresultado" method="POST" action="index.php?pagina=resultado&acao=inserir">
 
     <input type="number" name="jogo_id" placeholder="ID do Jogo" required>
 

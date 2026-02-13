@@ -25,14 +25,18 @@ h3 {
 
 /* ===== FORMULÁRIO ===== */
 form {
-    max-width: 400px;
+    max-width: 900px;
     margin: auto;
     display: flex;
-    gap: 10px;
+    justify-content: space-evenly;
+    background: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    margin-bottom: 1em;
 }
 
-form input[type="text"] {
-    flex: 1;
+form input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -40,17 +44,30 @@ form input[type="text"] {
 }
 
 form button {
-    padding: 10px 15px;
-    background-color: #1f3c88;
+    grid-column: 1 / -1;
+    padding: 12px;
+    background-color: #e6d72e;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 15px;
     transition: 0.3s ease;
 }
 
 form button:hover {
     background-color: #162d66;
+}
+
+#formgrupo {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 /* ===== TABELA ===== */
@@ -66,7 +83,7 @@ table {
 }
 
 table th {
-    background-color: #1f3c88;
+    background-color: #1d9c3f;
     color: white;
     padding: 12px;
 }

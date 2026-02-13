@@ -8,7 +8,7 @@
 
 <h2>Cadastro de Seleções</h2>
 
-<form method="POST" action="index.php?pagina=selecao&acao=inserir">
+<form id="formselecao" method="POST" action="index.php?pagina=selecao&acao=inserir">
 
     <input type="text" name="nome" placeholder="Nome da Seleção" required>
 
@@ -27,6 +27,7 @@
     <th>Nome</th>
     <th>Continente</th>
     <th>Grupo</th>
+    <th>Ações</th>
 </tr>
 
 <?php foreach ($dados as $selecao): ?>

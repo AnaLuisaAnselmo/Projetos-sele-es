@@ -8,7 +8,7 @@
 
 <h2>Cadastro de Grupos</h2>
 
-<form method="POST" action="index.php?pagina=grupo&acao=inserir">
+<form id="formgrupo" method="POST" action="index.php?pagina=grupo&acao=inserir">
     <input type="text" name="nome" placeholder="Nome do Grupo (A, B...)" required>
     <button type="submit">Cadastrar</button>
 </form>

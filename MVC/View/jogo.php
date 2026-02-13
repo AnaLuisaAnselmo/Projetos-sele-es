@@ -8,7 +8,7 @@
 
 <h2>Cadastro de Jogos</h2>
 
-<form method="POST" action="index.php?pagina=jogo&acao=inserir">
+<form id="formjogo" method="POST" action="index.php?pagina=jogo&acao=inserir">
 
     <input type="text" name="mandante" placeholder="ID Mandante" required>
 

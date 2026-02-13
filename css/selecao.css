@@ -25,15 +25,15 @@ h3 {
 
 /* ===== FORMULÁRIO ===== */
 form {
-    max-width: 900px;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    
     background: white;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    margin-bottom: 1em;
 }
 
 form input {
@@ -46,7 +46,7 @@ form input {
 form button {
     grid-column: 1 / -1;
     padding: 12px;
-    background-color: #1f3c88;
+    background-color: #e6d72e;
     color: white;
     border: none;
     border-radius: 6px;
@@ -56,7 +56,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #162d66;
+    background-color: #656616;
 }
 
 /* ===== TABELA ===== */
@@ -71,7 +71,7 @@ table {
 }
 
 table th {
-    background-color: #1f3c88;
+    background-color: #1d9c3f;
     color: white;
     padding: 12px;
     font-size: 13px;

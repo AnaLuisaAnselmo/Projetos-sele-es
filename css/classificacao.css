@@ -12,6 +12,42 @@ body {
     padding: 40px;
 }
 
+/* ===== FORMULÁRIO ===== */
+form {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    margin-bottom: 1em;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+form button {
+    grid-column: 1 / -1;
+    padding: 12px;
+    background-color: #e6d72e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background-color: #162d66;
+}
+
 /* ===== TÍTULO ===== */
 h2 {
     text-align: center;
@@ -34,7 +70,7 @@ table {
 
 /* Cabeçalho */
 table th {
-    background: #1f3c88;
+    background: #1d9c3f;
     color: white;
     padding: 12px;
     font-size: 14px;
