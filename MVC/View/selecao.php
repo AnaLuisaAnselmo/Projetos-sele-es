@@ -35,6 +35,14 @@
     <td><?= $selecao['nome'] ?></td>
     <td><?= $selecao['continente'] ?></td>
     <td><?= $selecao['grupo_id'] ?></td>
+    <td>
+                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
+                |
+                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
+                   onclick="return confirm('Tem certeza que deseja excluir?')">
+                   Excluir
+                </a>
+            </td>
 </tr>
 <?php endforeach; ?>
 

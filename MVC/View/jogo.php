@@ -51,6 +51,14 @@
     <td><?= $jogo['estadio'] ?></td>
     <td><?= $jogo['data_jogo'] ?></td>
     <td><?=$jogo['grupo']?></td>
+    <td>
+                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
+                |
+                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
+                   onclick="return confirm('Tem certeza que deseja excluir?')">
+                   Excluir
+                </a>
+            </td>
     
 </tr>
 <?php endforeach; ?>
