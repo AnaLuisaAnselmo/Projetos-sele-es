@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="classificacao.css">
+    <link rel="stylesheet" href="css/jogo.css">
+    <title>Página Inicial</title>
 </head>
 <body>
+    <div class= "nav">
     <form method="GET">
      <input type="submit" name="pagina" value="classificacao">
 
@@ -20,7 +23,7 @@
      <input type="submit" name="pagina" value="usuario">
 
 
-    </form>
+    </form></div>
 </body>
 </html>
 

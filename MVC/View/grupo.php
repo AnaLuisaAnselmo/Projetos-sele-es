@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Grupos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/grupo.css">
 </head>
 <body>
 
@@ -19,6 +19,7 @@
     <tr>
         <th>ID</th>
         <th>Nome</th>
+        <th>Ações</th>
     </tr>
 
     <?php foreach ($dados as $grupo): ?>

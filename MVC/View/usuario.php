@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Usuários</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/usuario.css">
 </head>
 <body>
 
@@ -25,6 +25,7 @@
     <th>Idade</th>
     <th>Cargo</th>
     <th>Seleção</th>
+    <th>Ações</th>
 </tr>
 
 <?php foreach ($dados as $usuario): ?>

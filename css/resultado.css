@@ -1,0 +1,112 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background-color: #f4f6f9;
+    padding: 40px;
+}
+
+/* ===== TÍTULOS ===== */
+h2, h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1f3c88;
+}
+
+h3 {
+    margin-top: 50px;
+}
+
+/* ===== FORMULÁRIO ===== */
+form {
+    max-width: 500px;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+form button {
+    padding: 12px;
+    background-color: #1f3c88;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background-color: #162d66;
+}
+
+/* ===== TABELA ===== */
+table {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th {
+    background-color: #1f3c88;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+/* Zebra */
+table tr:nth-child(even) {
+    background-color: #f2f4f8;
+}
+
+/* Hover */
+table tr:hover {
+    background-color: #e3ebff;
+}
+
+/* ===== LINKS ===== */
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:first-child {
+    color: #28a745;
+}
+
+a:last-child {
+    color: #dc3545;
+}
+
+a:hover {
+    opacity: 0.7;
+}

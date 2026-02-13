@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Seleções</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/selecao.css">
 </head>
 <body>
 

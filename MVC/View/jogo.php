@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Jogos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jogo.css">
 </head>
 <body>
 
@@ -39,6 +39,7 @@
     <th>Estádio</th>
     <th>Data</th>
     <th>Grupo</th>
+    <th>Ações</th>
 </tr>
 
 <?php foreach ($dados as $jogo): ?>

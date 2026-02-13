@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Resultados</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/resultado.css">
 </head>
 <body>
 
@@ -26,6 +26,7 @@
     <th>ID</th>
     <th>GM</th>
     <th>GV</th>
+    <th>Ações</th>
 </tr>
 
 

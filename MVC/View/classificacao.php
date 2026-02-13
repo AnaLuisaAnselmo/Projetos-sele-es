@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Classificação</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/classificacao.css">
 </head>
 <body>
 
