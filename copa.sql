@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `classificacao` (
+  
   `id` int(11) NOT NULL,
   `selecao_id` int(11) DEFAULT NULL,
   `grupo_id` int(11) DEFAULT NULL,

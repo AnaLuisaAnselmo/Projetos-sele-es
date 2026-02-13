@@ -25,7 +25,15 @@ class ClassificacaoModel {
 
     public function listar() {
         return Database::connect()
-            ->query("SELECT * FROM classificacao ORDER BY grupo_id, pontos DESC, saldo_gols DESC, gols_marcados DESC")
+    ->query("
+    SELECT 
+        c.*, 
+        s.nome 
+    FROM classificacao c
+    INNER JOIN selecoes s 
+        ON c.selecao_id = s.id
+    ORDER BY c.grupo_id, c.pontos DESC, c.saldo_gols DESC, c.gols_marcados DESC
+")
             ->fetchAll();
     }
 }

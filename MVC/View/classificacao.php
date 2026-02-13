@@ -23,7 +23,7 @@
 
 <?php foreach ($dados as $c): ?>
 <tr>
-    <td><?= $c['selecao_id'] ?></td>
+    <td><?= $c['nome'] ?></td>
     <td><?= $c['grupo_id'] ?></td>
     <td><?= $c['pontos'] ?></td>
     <td><?= $c['vitorias'] ?></td>
@@ -39,3 +39,5 @@
 
 </body>
 </html>
+
+
