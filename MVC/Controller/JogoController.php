@@ -10,6 +10,12 @@ class JogoController {
         $this->model = new JogoModel();
     }
 
+    public function index() {
+        $model = new JogoModel();
+        $dados = $model->listarjogos();
+        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/Jogo/jogo.php";
+    }
+
     public function jogoeditar() {
 
         $this->model->editar(
@@ -30,6 +36,12 @@ class JogoController {
 
         $this->model->deletar($id);
 
+        header("Location: index.php?pagina=jogo");
+    }
+
+    public function jogo() {
+        $model = new GrupoModel();
+        $model->inserir($_POST['nome']);
         header("Location: index.php?pagina=jogo");
     }
 }

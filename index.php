@@ -9,6 +9,7 @@
 <body>
     
     <form id="geraaaaal" method="GET">
+
      <input type="submit" name="pagina" value="classificacao">
 
      <input type="submit" name="pagina" value="grupo">
@@ -39,5 +40,4 @@ require "MVC/Controller/$controllerName.php";
 $controller = new $controllerName();
 $controller->$acao();
 
-
-
+?>
