@@ -14,4 +14,11 @@ class UsuarioModel {
             ->prepare("INSERT INTO usuarios (nome, idade, cargo, selecao_id) VALUES (?, ?, ?, ?)")
             ->execute([$nome, $idade, $cargo, $selecao_id]);
     }
+
+    public function deletar($id)
+{
+    Database::connect()
+        ->prepare("DELETE FROM usuario WHERE id=?")
+        ->execute([$id]);
+}
 }

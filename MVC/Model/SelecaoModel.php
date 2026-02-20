@@ -18,12 +18,19 @@ class SelecaoModel {
     );
     $stmt->execute([$nome, $continente, $grupo]);
 
-    $id = $conn->lastInsertId(); // agora pega o ID correto
+    $id = $conn->lastInsertId(); 
 
     $stmt2 = $conn->prepare(
         "INSERT INTO classificacao (selecao_id, grupo_id) VALUES (?, ?)"
     );
     $stmt2->execute([$id, $grupo]);
+}
+
+public function deletar($id)
+{
+    Database::connect()
+        ->prepare("DELETE FROM selecao WHERE id=?")
+        ->execute([$id]);
 }
 
 }

@@ -5,7 +5,7 @@ class JogoController {
 
     private $model;
 
-    // cria o model automaticamente
+
     public function __construct() {
         $this->model = new JogoModel();
     }
