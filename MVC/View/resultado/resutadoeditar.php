@@ -1,16 +1,7 @@
 <?php
 
-require_once "C:/Turma2/xampp/htdocs/Projeto-sele-es/DB/Database.php";
-require_once "C:/Turma2/xampp/htdocs/Projeto-sele-es/Controller/ResultadoController.php";
-
-$ResultadoController = new ResultadoController($pdo);
-
-if(isset($_GET['id'])){
-
-    $id = $_GET['id'];
-    $resultado = $ResultadoController->buscarResultado($id);
-
-
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/Config/Database.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/ResultadoController.php";    
 ?>
 
 <!DOCTYPE html>
@@ -22,34 +13,16 @@ if(isset($_GET['id'])){
 </head>
 <body>
     
-<form id="formresultado" method="POST" action="index.php?pagina=resultado&acao=inserir">
+<form id="formresultado" method="POST" action="index.php?pagina=resultado&acao=editar&id=<?=$dados['id'];?>">
 
-    <input type="number" name="jogo_id" placeholder="ID do Jogo" required>
+    <input type="number" name="jogo_id" placeholder="ID do Jogo" value="<?= $dados['jogo_id']; ?>" required>
 
-    <input type="number" name="gols_mandante" placeholder="Gols Mandante" required>
+    <input type="number" name="gols_mandante" placeholder="Gols Mandante" value="<?= $dados['gols_mandante']; ?>" required>
 
-    <input type="number" name="gols_visitante" placeholder="Gols Visitante" required>
+    <input type="number" name="gols_visitante" placeholder="Gols Visitante" value="<?= $dados['gols_visitante']; ?>" required>
 
     <button type="submit">Registrar</button>
 </form>
 
 </body>
 </html>
-
-<?php
-
-}else{
-    header('Location: resultado.php');
-}
-
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    $jogo_id = $_POST['jogo_id'];
-    $gols_mandante = $_POST['gols_mandante'];
-    $gols_visitante = $_POST['gols_visitante'];
-
-    $ResultadoController->editar($jogo_id, $gols_mandante, $gols_visitante);
-
-    header('Location: ../../index.php');
-}
-
-?>
