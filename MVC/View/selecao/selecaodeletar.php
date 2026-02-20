@@ -1,14 +1,14 @@
 <?php
 
 require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/Config/Database.php";
-require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/ResultadoController.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/SelecaoController.php";
 
-$ResultadoController = new ResultadoController($pdo);
+$SelecaoGrupoController = new SelecaoController($pdo);
 
 if(isset($_GET['id'])){
 
     $id = $_GET['id'];
-    $resultado = $ResultadoController->resultadodeletar($id);
+    $selecao = $SelecaoGrupoController->selecaodeletar($id);
     header('Location: ../../index.php');
 }else{
     header('Location: ../../index.php');
