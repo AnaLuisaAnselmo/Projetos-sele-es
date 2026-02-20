@@ -6,7 +6,7 @@ class GrupoController {
     public function index() {
         $model = new GrupoModel();
         $dados = $model->listar();
-        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/usuario/usuario.php";
+        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/grupo/grupo.php";
     }
 
     public function inserir() {
