@@ -6,7 +6,7 @@ class ResultadoController {
     public function index() {
         $model = new ResultadoModel();
         $dados = $model->listar();
-        require "MVC/View/resultado.php";
+        require "MVC/View/resultado/resultado.php";
     }
 
     public function inserir() {
@@ -23,6 +23,17 @@ class ResultadoController {
     public function listar() {
         $model = new ResultadoModel();
         return $model->listar();
+    }
+
+    public function editar() {
+       $model = new ResultadoModel();
+        $model->editar(
+            $_POST['jogo_id'],
+            $_POST['gols_mandante'],
+            $_POST['gols_visitante']
+            );
+
+            header("Location: index.php?pagina=resultado");
     }
 
 }

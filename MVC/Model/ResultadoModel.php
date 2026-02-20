@@ -29,4 +29,19 @@ class ResultadoModel {
             ->fetchAll();
            
     }
+
+    public function editar( $jogo_id, $gols_mandante, $gols_visitante){
+
+    global $pdo; // ou use $this->pdo se você estiver usando injeção no construtor
+
+    $sql = "UPDATE resultados 
+            SET jogo_id = ?, 
+                gols_mandante = ?, 
+                gols_visitante = ?
+            WHERE id = ?";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$jogo_id, $gols_mandante, $gols_visitante, ]);
+}
+
 }

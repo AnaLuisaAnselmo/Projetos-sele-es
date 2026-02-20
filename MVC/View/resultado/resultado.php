@@ -39,9 +39,9 @@ foreach ($dados as $resultado): ?>
     <td><?=$resultado['gols_mandante']?></td>
     <td><?=$resultado['gols_visitante']?></td>
     <td>
-                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
+                <a href="index.php?pagina=resultado&acao=editar&id=<?= $resultado['id'] ?>">Editar</a>
                 |
-                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
+                <a href="index.php?pagina=resultado&acao=excluir&id=<?= $resultado['id'] ?>" 
                    onclick="return confirm('Tem certeza que deseja excluir?')">
                    Excluir
                 </a>
