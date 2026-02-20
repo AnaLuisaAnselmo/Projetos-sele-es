@@ -9,10 +9,15 @@
 <h2>Cadastro de Usuários</h2>
 
 <form id="formusuario" method="POST" action="index.php?pagina=usuario&acao=inserir">
+
     <input type="text" name="nome" placeholder="Nome" required>
+
     <input type="number" name="idade" placeholder="Idade" required>
+
     <input type="text" name="cargo" placeholder="Cargo" required>
+
     <input type="number" name="selecao_id" placeholder="ID da Seleção" required>
+    
     <button type="submit">Cadastrar</button>
 </form>
 
@@ -36,9 +41,9 @@
     <td><?= $usuario['cargo'] ?></td>
     <td><?= $usuario['selecao_id'] ?></td>
     <td>
-                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
+                <a href="index.php?pagina=usuario&acao=editar&id=<?= $usuario['id'] ?>">Editar</a>
                 |
-                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
+                <a href="index.php?pagina=usuario&acao=excluir&id=<?= $usuario['id'] ?>" 
                    onclick="return confirm('Tem certeza que deseja excluir?')">
                    Excluir
                 </a>
