@@ -1,12 +1,12 @@
 <?php
-require_once "MVC/Model/SelecaoModel.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Model/SelecaoModel.php";
 
 class SelecaoController {
 
     public function index() {
         $model = new SelecaoModel();
         $dados = $model->listar();
-        require "MVC/View/selecao.php";
+        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/selecao/selecao.php";
     }
 
     public function inserir() {

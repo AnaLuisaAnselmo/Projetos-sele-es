@@ -1,12 +1,12 @@
 <?php
-require_once "MVC/Model/JogoModel.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Model/JogoModel.php";
 
 class JogoController {
 
     public function index() {
         $model = new JogoModel();
         $dados = $model->listar();
-        require "MVC/View/jogo.php";
+        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/Jogo/jogo.php";
     }
 
     public function inserir() {
