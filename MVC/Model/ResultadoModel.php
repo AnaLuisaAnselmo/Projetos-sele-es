@@ -12,13 +12,12 @@ class ResultadoModel {
            
         $stmt->execute([$jogo, $gm, $gv]);
 
-         //$id = $conn->lastInsertId(); // agora pega o ID correto
+      
 
         $jogoInfo = $conn->query("SELECT * FROM jogos WHERE id=$jogo")
             ->fetch();
 
-            //var_dump($jogoInfo);
-           // die();
+           
         $classificacao = new ClassificacaoModel();
         $classificacao->atualizar($jogoInfo['mandante'], $gm, $gv);
         $classificacao->atualizar($jogoInfo['visitante'], $gv, $gm);
