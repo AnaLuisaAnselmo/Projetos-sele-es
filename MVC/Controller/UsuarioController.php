@@ -1,12 +1,12 @@
 <?php
-require_once "MVC/Model/UsuarioModel.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Model/UsuarioModel.php";
 
 class UsuarioController {
 
     public function index() {
         $model = new UsuarioModel();
         $dados = $model->listar();
-        require "MVC/View/usuario.php";
+        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/usuario/usuario.php";
     }
 
     public function inserir() {

@@ -1,12 +1,12 @@
 <?php
-require_once "MVC/Model/GrupoModel.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Model/GrupoModel.php";
 
 class GrupoController {
 
     public function index() {
         $model = new GrupoModel();
         $dados = $model->listar();
-        require "MVC/View/grupo.php";
+        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/usuario/usuario.php";
     }
 
     public function inserir() {
