@@ -38,3 +38,6 @@ require "MVC/Controller/$controllerName.php";
 
 $controller = new $controllerName();
 $controller->$acao();
+
+
+
