@@ -9,7 +9,7 @@ class UsuarioModel {
             ->fetchAll();
     }
 
-    public function inserir($nome, $idade, $cargo, $selecao) {
+    public function inserir($nome, $idade, $cargo, $selecao_id) {
         Database::connect()
             ->prepare("INSERT INTO usuarios (nome, idade, cargo, selecao_id) VALUES (?, ?, ?, ?)")
             ->execute([$nome, $idade, $cargo, $selecao_id]);

@@ -9,19 +9,19 @@ class GrupoController {
         require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/grupo/grupo.php";
     }
 
-    public function inserir() {
+    public function grupo() {
         $model = new GrupoModel();
         $model->inserir($_POST['nome']);
         header("Location: index.php?pagina=grupo");
     }
 
-    public function excluir() {
+    public function grupodeletar() {
         $model = new GrupoModel();
         $model->excluir($_GET['id']);
         header("Location: index.php?pagina=grupo");
     }
 
-    public function editar() {
+    public function grupoeditar() {
         $model = new GrupoModel();
 
         if ($_POST) {
@@ -34,3 +34,4 @@ class GrupoController {
     }
 }
 
+?>
