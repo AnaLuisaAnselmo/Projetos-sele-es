@@ -1,8 +1,8 @@
 <?php
 require_once "Config/Database.php";
 
-class JogoModel
-{
+class JogoModel {
+private $pdo;
 
 
     public function editar($id, $mandante, $visitante, $gols_mandante, $gols_visitante, $estadio, $data_jogo, $grupo)
@@ -48,4 +48,13 @@ class JogoModel
             ->prepare("DELETE FROM jogos WHERE id=?")
             ->execute([$id]);
     }
+
+public function listarjogos()
+    {
+        return Database::connect()
+            ->query("SELECT * FROM jogos ")
+            ->fetchAll();
+
+    }
+
 }

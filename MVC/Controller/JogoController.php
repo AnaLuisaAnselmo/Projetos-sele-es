@@ -6,17 +6,21 @@ class JogoController
 
     private $model;
 
-    // cria o model automaticamente
-    public function __construct()
-    {
+
+    public function __construct() {
         $this->model = new JogoModel();
     }
 
-    public function index()
-    {
+    public function index() {
         $model = new JogoModel();
-        $dados = $model->listar();
-        require "MVC/View/Jogo/jogo.php";
+        $dados = $model->listarjogos();
+        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/Jogo/jogo.php";
+    }
+
+    public function index() {
+        $model = new JogoModel();
+        $dados = $model->listarjogos();
+        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/Jogo/jogo.php";
     }
 
     public function inserir()
@@ -87,6 +91,12 @@ class JogoController
 
         $this->model->deletar($id);
 
+        header("Location: index.php?pagina=jogo");
+    }
+
+    public function jogo() {
+        $model = new GrupoModel();
+        $model->inserir($_POST['nome']);
         header("Location: index.php?pagina=jogo");
     }
 }
