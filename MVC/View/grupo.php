@@ -22,7 +22,9 @@
         <th>Ações</th>
     </tr>
 
-    <?php foreach ($dados as $grupo): ?>
+    <?php 
+
+    foreach ($dados as $grupo): ?>
         <tr>
             <td><?= $grupo['id'] ?></td>
             <td><?= $grupo['nome'] ?></td>
