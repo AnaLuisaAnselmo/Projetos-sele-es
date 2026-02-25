@@ -17,10 +17,15 @@ $UsuarioController = new UsuarioController();
 <h2>Cadastro de Usuários</h2>
 
 <form id="formusuario" method="POST" action="index.php?pagina=usuario&acao=inserir">
+
     <input type="text" name="nome" placeholder="Nome" required>
+
     <input type="number" name="idade" placeholder="Idade" required>
+
     <input type="text" name="cargo" placeholder="Cargo" required>
+
     <input type="number" name="selecao_id" placeholder="ID da Seleção" required>
+    
     <button type="submit">Cadastrar</button>
 </form>
 

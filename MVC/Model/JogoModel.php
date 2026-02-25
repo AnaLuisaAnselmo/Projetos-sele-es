@@ -4,14 +4,41 @@ require_once "Config/Database.php";
 class JogoModel {
 private $pdo;
 
-public function editar($id,$mandante,$visitante,$gm,$gv,$estadio,$data,$grupo)
-{
-    Database::connect()
-        ->prepare("UPDATE jogos 
-        SET mandante=?, visitante=?, gols_mandante=?, gols_visitante=?, estadio=?, data_jogo=?, grupo=?
-        WHERE id=?")
-        ->execute([$mandante,$visitante,$gm,$gv,$estadio,$data,$grupo,$id]);
-}
+
+    public function editar($id, $mandante, $visitante, $gols_mandante, $gols_visitante, $estadio, $data_jogo, $grupo)
+    {
+        $conn = Database::connect();
+
+        $stmt = $conn->prepare("UPDATE jogos 
+
+            SET 
+                mandante = ?,
+                visitante = ?, 
+                gols_mandante = ?, 
+                gols_visitante = ?,
+                estadio = ?,
+                data_jogo = ?, 
+                grupo = ?
+            WHERE id = ?");
+
+        $stmt->execute([ $mandante, $visitante, $gols_mandante, $gols_visitante, $estadio, $data_jogo, $grupo, $id]);
+    }
+
+    public function listar()
+    {
+        return Database::connect()
+            ->query("select*from jogos ")
+            ->fetchAll();
+
+    }
+
+    public function listarjogo()
+    {
+        $id = $_GET['id'];
+        return Database::connect()
+            ->query("select * from jogos where id = $id")
+            ->fetch();
+    }
 
 public function jogodeletar($id)
 {
