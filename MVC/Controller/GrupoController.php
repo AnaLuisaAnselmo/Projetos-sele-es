@@ -11,16 +11,42 @@ class GrupoController {
 
     public function index() {
         $model = new GrupoModel();
-        $dados = $model->listargrupo();
+        $dados = $model->listar();
         require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/grupo/grupo.php";
     }
 
-    public function grupo() {
+    public function mostrareditar()
+    {
+       $id = $_GET["id"];
+       $model = new GrupoModel();
+       $dados = $model->listargrupo($id);
+       require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/grupo/grupoeditar.php";
+    }
+    
+    public function listar()
+    {
         $model = new GrupoModel();
-        $model->inserir($_POST['nome']);
-        header("Location: index.php?pagina=grupo");
+        return $model->listar();
     }
 
+    public function editar()
+    {
+         if($_SERVER['REQUEST_METHOD'] !== 'POST'){
+        header("Location: index.php?pagina=selecao");
+        exit;
+        }
+
+        $id = $_GET["id"];
+        $nome = $_POST["nome"];
+
+        $model = new GrupoModel();
+        $model->editar(
+            $id,
+             $nome,
+             );
+
+        header("Location: index.php?pagina=grupo");     
+    }
     
 public function excluir()
 {
@@ -33,21 +59,12 @@ public function excluir()
     header("Location: index.php?pagina=grupo");
 }
 
-    public function grupoeditar() {
-        $model = new GrupoModel();
-
-        if ($_POST) {
-            $model->atualizar($_POST['id'], $_POST['nome']);
-            header("Location: index.php?pagina=grupo");
-        } else {
-            $dados = $model->buscarPorId($_GET['id']);
-            require "MVC/View/grupo_editar.php";
-        }
-    }
     public function inserir()
 {
     $model = new GrupoModel();
-    $model->inserir($_POST['nome']);
+    $this->model->inserir(
+        $_POST["nome"]
+        );
 
     header("Location: index.php?pagina=grupo");
 }

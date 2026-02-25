@@ -36,7 +36,7 @@ $GrupoController = new GrupoController();
             <td><?= $grupo['id'] ?></td>
             <td><?= $grupo['nome'] ?></td>
             <td>
-                <a href="index.php?pagina=grupo&acao=editar&id=<?= $grupo['id'] ?>">Editar</a>
+                <a href="index.php?pagina=grupo&acao=mostrareditar&id=<?= $grupo['id'] ?>">Editar</a>
                 |
                 <a href="index.php?pagina=grupo&acao=excluir&id=<?= $grupo['id'] ?>" 
                    onclick="return confirm('Tem certeza que deseja excluir?')">
