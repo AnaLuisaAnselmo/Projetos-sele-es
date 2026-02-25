@@ -19,9 +19,9 @@ $id = $_GET["id"];
 
     <input type="hidden" name="id" value="<?= $dados['id']; ?>">
 
-    <input type="text" name="mandante" value="<?= $dados['mandante']; ?>" required>
+    <input type="number" name="mandante" value="<?= $dados['mandante']; ?>" required>
 
-    <input type="text" name="visitante" value="<?= $dados['visitante']; ?>" required>
+    <input type="number" name="visitante" value="<?= $dados['visitante']; ?>" required>
 
     <input type="number" name="gols_mandante" value="<?= $dados['gols_mandante']; ?>" required>
 

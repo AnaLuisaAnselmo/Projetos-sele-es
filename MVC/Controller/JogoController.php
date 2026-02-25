@@ -17,11 +17,7 @@ class JogoController
         require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/Jogo/jogo.php";
     }
 
-    public function index() {
-        $model = new JogoModel();
-        $dados = $model->listarjogos();
-        require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/Jogo/jogo.php";
-    }
+
 
     public function inserir()
     {

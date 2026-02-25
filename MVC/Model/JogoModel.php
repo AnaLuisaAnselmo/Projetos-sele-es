@@ -9,11 +9,9 @@ private $pdo;
     {
         $conn = Database::connect();
 
-
-
         $stmt = $conn->prepare("UPDATE jogos 
 
-            SET id = ?,
+            SET 
                 mandante = ?,
                 visitante = ?, 
                 gols_mandante = ?, 
@@ -23,7 +21,7 @@ private $pdo;
                 grupo = ?
             WHERE id = ?");
 
-        $stmt->execute([$id, $mandante, $visitante, $gols_mandante, $gols_visitante, $estadio, $data_jogo, $grupo]);
+        $stmt->execute([ $mandante, $visitante, $gols_mandante, $gols_visitante, $estadio, $data_jogo, $grupo, $id]);
     }
 
     public function listar()
