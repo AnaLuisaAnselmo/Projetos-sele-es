@@ -10,7 +10,7 @@ class SelecaoController {
     }
 
     public function index() {
-        $dados = $this->model->listar();
+        $dados = $this->model->selecaolistar();
         require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/selecao/selecao.php";
     }
 
@@ -25,8 +25,10 @@ class SelecaoController {
         header("Location: index.php?pagina=selecao");
     }
 
-    public function selecaodeletar($id) {
+     public function excluir()
+{
+    $this->model->selecaodeletar($_GET['id']);
 
-        $this->model->deletar($id);
-    }
+    header("Location: index.php?pagina=selecao");
+}
 }

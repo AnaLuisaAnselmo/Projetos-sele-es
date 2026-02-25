@@ -1,3 +1,11 @@
+<?php 
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/Config/Database.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/ResultadoController.php";
+ 
+$ResultadoController = new ResultadoController();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +18,8 @@
 
 <form id="formresultado" method="POST" action="index.php?pagina=resultado&acao=inserir">
 
-    <input type="number" name="jogo_id" placeholder="ID do Jogo" required>
-
+   <input type="number" name="jogo_id">
+   
     <input type="number" name="gols_mandante" placeholder="Gols Mandante" required>
 
     <input type="number" name="gols_visitante" placeholder="Gols Visitante" required>

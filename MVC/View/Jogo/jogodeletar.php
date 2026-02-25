@@ -5,9 +5,9 @@ require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/JogoControl
 
 $JogoGrupoController = new JogoController($pdo);
 
-if(isset($_GET['id'])){
+if(isset($_GET[':id'])){
 
-    $id = $_GET['id'];
+    $id = $_GET[':id'];
     $jogo = $JogoGrupoController->jogodeletar($id);
     header('Location: ../../index.php');
 }else{

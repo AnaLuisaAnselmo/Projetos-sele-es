@@ -32,12 +32,15 @@ class JogoController {
         header("Location: index.php?pagina=jogo");
     }
 
-    public function jogodeletar($id) {
+    public function jogodeletar() {
 
-        $this->model->deletar($id);
+    $id = $_GET['id'];
 
-        header("Location: index.php?pagina=jogo");
-    }
+    $model = new JogoModel();
+    $model->jogodeletar($id);
+
+    header("Location: index.php?pagina=jogo");
+}
 
     public function jogo() {
         $model = new GrupoModel();

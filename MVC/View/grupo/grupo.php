@@ -1,3 +1,10 @@
+<?php 
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/Config/Database.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/GrupoController.php";
+ 
+$GrupoController = new GrupoController();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +36,9 @@
             <td><?= $grupo['id'] ?></td>
             <td><?= $grupo['nome'] ?></td>
             <td>
-                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
+                <a href="index.php?pagina=grupo&acao=editar&id=<?= $grupo['id'] ?>">Editar</a>
                 |
-                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
+                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $grupo['id'] ?>" 
                    onclick="return confirm('Tem certeza que deseja excluir?')">
                    Excluir
                 </a>

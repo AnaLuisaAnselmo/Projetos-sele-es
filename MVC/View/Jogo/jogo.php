@@ -1,3 +1,10 @@
+<?php 
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/Config/Database.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/JogoController.php";
+ 
+$jogoController = new JogoController();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,9 +60,9 @@
     <td><?= $jogo['data_jogo'] ?></td>
     <td><?=$jogo['grupo']?></td>
     <td>
-                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
+                <a href="index.php?pagina=jogo&acao=editar&id=<?= $jogo['id'] ?>">Editar</a>
                 |
-                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
+                <a href="index.php?pagina=jogo&acao=jogodeletar&id=<?= $jogo['id'] ?>" 
                    onclick="return confirm('Tem certeza que deseja excluir?')">
                    Excluir
                 </a>

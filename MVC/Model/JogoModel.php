@@ -13,7 +13,7 @@ public function editar($id,$mandante,$visitante,$gm,$gv,$estadio,$data,$grupo)
         ->execute([$mandante,$visitante,$gm,$gv,$estadio,$data,$grupo,$id]);
 }
 
-public function deletar($id)
+public function jogodeletar($id)
 {
     Database::connect()
         ->prepare("DELETE FROM jogos WHERE id=?")

@@ -3,7 +3,7 @@ require_once "Config/Database.php";
 
 class SelecaoModel {
 
-    public function listar() {
+    public function selecaolistar() {
         return Database::connect()
             ->query("SELECT * FROM selecoes")
             ->fetchAll();
@@ -26,11 +26,11 @@ class SelecaoModel {
     $stmt2->execute([$id, $grupo]);
 }
 
-public function deletar($id)
+   public function selecaodeletar($id)
 {
-    Database::connect()
-        ->prepare("DELETE FROM selecao WHERE id=?")
-        ->execute([$id]);
+    $stmt = Database::connect()
+        ->prepare("DELETE FROM selecoes WHERE id=?");
+        $stmt->execute([$id]);
 }
 
 }

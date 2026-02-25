@@ -1,3 +1,11 @@
+<?php 
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/Config/Database.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/UsuarioController.php";
+ 
+$UsuarioController = new UsuarioController();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,14 +43,14 @@
     <td><?= $usuario['idade'] ?></td>
     <td><?= $usuario['cargo'] ?></td>
     <td><?= $usuario['selecao_id'] ?></td>
-    <td>
-                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
-                |
-                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
-                   onclick="return confirm('Tem certeza que deseja excluir?')">
-                   Excluir
-                </a>
-            </td>
+   <td>
+    <a href="index.php?pagina=usuario&acao=editar&id=<?= $usuario['id'] ?>">Editar</a>
+    |
+    <a href="index.php?pagina=usuario&acao=excluir&id=<?= $usuario['id'] ?>"
+       onclick="return confirm('Tem certeza que deseja excluir?')">
+       Excluir
+    </a>
+</td>
 </tr>
 <?php endforeach; ?>
 

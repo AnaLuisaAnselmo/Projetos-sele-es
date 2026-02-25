@@ -1,3 +1,11 @@
+<?php 
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/Config/Database.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/SelecaoController.php";
+ 
+$SelecaoController = new SelecaoController();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,9 +45,9 @@
     <td><?= $selecao['continente'] ?></td>
     <td><?= $selecao['grupo_id'] ?></td>
     <td>
-                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
+                <a href="index.php?pagina=selecao&acao=editar&id=<?= $selecao['id'] ?>">Editar</a>
                 |
-                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
+                <a href="index.php?pagina=selecao&acao=excluir&id=<?= $selecao['id'] ?>" 
                    onclick="return confirm('Tem certeza que deseja excluir?')">
                    Excluir
                 </a>

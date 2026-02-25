@@ -9,13 +9,13 @@ class UsuarioController {
         $this->model = new UsuarioModel();
     }
 
-    // LISTAR
+
     public function index() {
-        $dados = $this->model->listar();
+        $dados = $this->model->listarusuarios();
         require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/usuario/usuario.php";
     }
 
-    // INSERIR
+
     public function inserir() {
 
         $this->model->inserir(
@@ -28,9 +28,12 @@ class UsuarioController {
         header("Location: index.php?pagina=usuario");
     }
 
-    // DELETAR
-    public function usuariodeletar($id) {
 
-        $this->model->deletar($id);
-    }
+
+  public function excluir()
+{
+    $this->model->deletar($_GET['id']);
+    header("Location: index.php?pagina=usuario");
+}
+
 }

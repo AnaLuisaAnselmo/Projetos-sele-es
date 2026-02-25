@@ -3,7 +3,7 @@ require_once "Config/Database.php";
 
 class UsuarioModel {
 
-    public function listar() {
+    public function listarusuarios() {
         return Database::connect()
             ->query("SELECT * FROM usuarios")
             ->fetchAll();
@@ -15,10 +15,10 @@ class UsuarioModel {
             ->execute([$nome, $idade, $cargo, $selecao_id]);
     }
 
-    public function deletar($id)
+public function deletar($id)
 {
     Database::connect()
-        ->prepare("DELETE FROM usuario WHERE id=?")
+        ->prepare("DELETE FROM usuarios WHERE id=?")
         ->execute([$id]);
 }
 }
