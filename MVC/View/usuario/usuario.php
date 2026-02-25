@@ -49,7 +49,7 @@ $UsuarioController = new UsuarioController();
     <td><?= $usuario['cargo'] ?></td>
     <td><?= $usuario['selecao_id'] ?></td>
    <td>
-    <a href="index.php?pagina=usuario&acao=editar&id=<?= $usuario['id'] ?>">Editar</a>
+    <a href="index.php?pagina=usuario&acao=mostrareditar&id=<?= $usuario['id'] ?>">Editar</a>
     |
     <a href="index.php?pagina=usuario&acao=excluir&id=<?= $usuario['id'] ?>"
        onclick="return confirm('Tem certeza que deseja excluir?')">
