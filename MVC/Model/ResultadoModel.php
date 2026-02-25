@@ -33,13 +33,12 @@ class ResultadoModel
 
     }
 
-    public function listarresultado()
-    {
-        $id = $_GET['id'];
-        return Database::connect()
-            ->query("select * from resultados where id = $id")
-            ->fetch();
-    }
+ public function listarresultado()
+{
+    return Database::connect()
+        ->query("SELECT * FROM resultados")
+        ->fetchAll();
+}
 
     public function editar($jogo_id, $gols_mandante, $gols_visitante)
     {
@@ -54,5 +53,13 @@ class ResultadoModel
 
         $stmt->execute([$jogo_id, $gols_mandante, $gols_visitante,$_GET["id"]]);
     }
+
+    public function resultadodeletar($id)
+{
+    $stmt = Database::connect()
+        ->prepare("DELETE FROM resultados WHERE id=?");
+
+    $stmt->execute([$id]);
+}
 
 }

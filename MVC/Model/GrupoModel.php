@@ -1,13 +1,12 @@
 <?php
 class GrupoModel {
-
     private $pdo;
 
     public function __construct() {
         $this->pdo = new PDO("mysql:host=localhost;dbname=copa", "root", "");
     }
 
-    public function listar() {
+    public function listargrupo() {
         $sql = "SELECT * FROM grupos";
         return $this->pdo->query($sql);
     }
@@ -19,7 +18,7 @@ class GrupoModel {
         return $stmt->execute();
     }
 
-    public function excluir($id) {
+    public function grupodeletar($id) {
         $sql = "DELETE FROM grupos WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id);

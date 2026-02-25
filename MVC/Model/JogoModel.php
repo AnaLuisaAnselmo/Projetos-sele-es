@@ -32,6 +32,34 @@ private $pdo;
 
     }
 
+   
+public function inserir(
+    $mandante,
+    $visitante,
+    $gols_mandante,
+    $gols_visitante,
+    $estadio,
+    $data_jogo,
+    $grupo
+){
+    Database::connect()
+        ->prepare("
+            INSERT INTO jogos
+            (mandante, visitante, gols_mandante, gols_visitante, estadio, data_jogo, grupo)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ")
+        ->execute([
+            $mandante,
+            $visitante,
+            $gols_mandante,
+            $gols_visitante,
+            $estadio,
+            $data_jogo,
+            $grupo
+        ]);
+}
+  
+
     public function listarjogo()
     {
         $id = $_GET['id'];
@@ -40,12 +68,12 @@ private $pdo;
             ->fetch();
     }
 
-    public function deletar($id)
-    {
-        Database::connect()
-            ->prepare("DELETE FROM jogos WHERE id=?")
-            ->execute([$id]);
-    }
+public function jogodeletar($id)
+{
+    Database::connect()
+        ->prepare("DELETE FROM jogos WHERE id=?")
+        ->execute([$id]);
+}
 
 public function listarjogos()
     {

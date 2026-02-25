@@ -1,3 +1,10 @@
+<?php 
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/Config/Database.php";
+require_once "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/Controller/JogoController.php";
+ 
+$jogoController = new JogoController();
+
+?>
 <!DOCTYPE html>
 <html>
 

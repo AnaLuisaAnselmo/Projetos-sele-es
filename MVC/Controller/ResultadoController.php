@@ -1,15 +1,24 @@
 <?php
 require_once "MVC/Model/ResultadoModel.php";
 
-class ResultadoController
-{
+class ResultadoController{
+private $model;
 
-    public function index()
-    {
-        $model = new ResultadoModel();
-        $dados = $model->listar();
-        require "MVC/View/resultado/resultado.php";
+public function __construct() {
+      $this->model = new ResultadoModel();
+
+
     }
+ public function index()
+{
+    $dados = $this->model->listarresultado();
+
+    $jogos = Database::connect()
+        ->query("SELECT * FROM jogos")
+        ->fetchAll();
+
+    require "MVC/View/resultado/resultado.php";
+}
 
     public function inserir()
     {
@@ -36,19 +45,13 @@ class ResultadoController
         require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/resultado/resutadoeditar.php";
     }
 
-    public function editar()
-    {
-        $jogo_id = $_POST['jogo_id'];
-        $gols_mandante = $_POST['gols_mandante'];
-        $gols_visitante = $_POST['gols_visitante'];
-        $model = new ResultadoModel();
-        $model->editar(
-            $jogo_id,
-            $gols_mandante,
-            $gols_visitante
-        );
 
-        header("Location: index.php?pagina=resultado");
-    }
+
+    public function excluir()
+{
+    $this->model->resultadodeletar($_GET['id']);
+
+    header("Location: index.php?pagina=resultado");
+}
 
 }

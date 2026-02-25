@@ -82,13 +82,14 @@ class JogoController
         require "C:/Turma2/xampp/htdocs/Projetos-sele-es/MVC/View/jogo/jogoeditar.php";
     }
 
-    public function jogodeletar($id)
-    {
+public function excluir()
+{
+    $id = $_GET['id'];
 
-        $this->model->deletar($id);
+    $this->model->jogodeletar($id);
 
-        header("Location: index.php?pagina=jogo");
-    }
+    header("Location: index.php?pagina=jogo");
+}
 
     public function jogo() {
         $model = new GrupoModel();
