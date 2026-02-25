@@ -3,21 +3,25 @@ require_once "Config/Database.php";
 
 class UsuarioModel {
 
-    public function listar() {
+    private $pdo;
+
+    public function listar() 
+    {
         return Database::connect()
             ->query("SELECT * FROM usuarios")
             ->fetchAll();
     }
 
-    public function listarusuario()
-    {
-        $id = $_GET['id'];
-        return Database::connect()
-            ->query("select * from usuarios where id = $id")
-            ->fetch();
-    }
+   public function listarusuario($id)
+{
+    $conn = Database::connect();
 
-    public function editar($nome, $idade, $cargo, $selecao_id)
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = ?");
+    $stmt->execute([$id]);
+
+    return $stmt->fetch();
+}
+    public function editar( $nome, $idade, $cargo, $selecao_id)
     {
 
        $conn = Database::connect();
@@ -26,10 +30,10 @@ class UsuarioModel {
             SET nome = ?, 
                 idade = ?, 
                 cargo = ?,
-                selecao_id = ?,
+                selecao_id = ?
             WHERE id = ?");
 
-        $stmt->execute([$nome, $idade, $cargo, $selecao_id,$_GET["id"]]);
+        $stmt->execute([$nome, $idade, $cargo, $selecao_id, $_GET["id"]]);
     }
 
     public function inserir($nome, $idade, $cargo, $selecao_id) {
