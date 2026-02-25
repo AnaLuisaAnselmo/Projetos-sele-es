@@ -37,9 +37,9 @@
     <td><?= $selecao['continente'] ?></td>
     <td><?= $selecao['grupo_id'] ?></td>
     <td>
-                <a href="index.php?pagina=grupo&acao=editar&id=<?= $linha['id'] ?>">Editar</a>
+                <a href="index.php?pagina=selecao&acao=mostrareditar&id=<?= $selecao['id'] ?>">Editar</a>
                 |
-                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $linha['id'] ?>" 
+                <a href="index.php?pagina=grupo&acao=excluir&id=<?= $selecao['id'] ?>" 
                    onclick="return confirm('Tem certeza que deseja excluir?')">
                    Excluir
                 </a>

@@ -3,27 +3,45 @@ require_once "Config/Database.php";
 
 class SelecaoModel {
 
-    public function listar() {
+   private $pdo;
+
+    public function listar() 
+    {
         return Database::connect()
             ->query("SELECT * FROM selecoes")
             ->fetchAll();
     }
 
-   public function inserir($nome, $continente, $grupo) {
+    public function listarselecao($id)
+    {
+        $conn = Database::connect();
 
-    $conn = Database::connect();
+        $stmt = $conn->prepare("SELECT * FROM selecoes WHERE id = ?");
+        $stmt->execute([$id]);
 
-    $stmt = $conn->prepare(
-        "INSERT INTO selecoes (nome, continente, grupo_id) VALUES (?, ?, ?)"
-    );
-    $stmt->execute([$nome, $continente, $grupo]);
+        return $stmt->fetch();
+    }
 
-    $id = $conn->lastInsertId(); 
+    public function editar($id, $nome, $continente, $grupo_id)
+    {
+        
+        $conn = Database::connect();
 
-    $stmt2 = $conn->prepare(
-        "INSERT INTO classificacao (selecao_id, grupo_id) VALUES (?, ?)"
-    );
-    $stmt2->execute([$id, $grupo]);
+        $stmt = $conn->prepare("UPDATE selecoes
+        SET nome = ?,
+           continente = ?,
+           grupo_id = ?
+        WHERE id = ? ");
+
+        $stmt->execute([$nome, $continente,$grupo_id, $id]);
+    }
+
+   public function inserir($nome, $continente, $grupo_id) 
+   {
+    Database::connect()
+     ->prepare("INSERT INTO selecoes (nome, continente, grupo_id) VALUES (?, ?, ?)")
+     ->execute([$nome, $continente, $grupo_id]);
+
 }
 
 public function deletar($id)
